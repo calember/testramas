@@ -1,0 +1,57 @@
+testramas
+
+Creacion de Ramas Ejemplo
+
+Cambio de ramas
+$ git checkout -b iss53
+Switched to a new branch "iss53"
+
+
+$ git branch iss53
+$ git checkout iss53
+
+
+$ git checkout master
+Switched to branch "master"
+
+
+envío de cambios
+
+git push origin master
+
+
+Si no has clonado un repositorio ya existente y quieres conectar tu repositorio local a un repositorio remoto, usa
+Ahora podrás subir tus cambios al repositorio remoto seleccionado.
+
+git remote add origin <server>
+
+Ramas
+
+Crea una nueva rama llamada "feature_x" y cámbiate a ella usando
+
+git checkout -b feature_x
+
+vuelve a la rama principal
+git checkout master
+
+y borra la rama
+git branch -d feature_x
+
+Una rama nueva no estará disponible para los demás a menos que subas (push) la rama a tu repositorio remoto
+git push origin <branch>
+
+
+actualiza & fusiona
+Para actualizar tu repositorio local al commit más nuevo, ejecuta 
+
+git pull
+
+en tu directorio de trabajo para bajar y fusionar los cambios remotos.
+Para fusionar otra rama a tu rama activa (por ejemplo master), utiliza
+git merge <branch>
+
+en ambos casos git intentará fusionar automáticamente los cambios. Desafortunadamente, no siempre será posible y se podrán producir conflictos. Tú eres responsable de fusionar esos conflictos manualmente al editar los archivos mostrados por git. Después de modificarlos, necesitas marcarlos como fusionados con
+git add <filename>
+
+Antes de fusionar los cambios, puedes revisarlos usando
+git diff <source_branch> <target_branch>
